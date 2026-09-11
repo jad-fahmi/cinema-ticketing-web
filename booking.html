@@ -3,14 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlaceholderName - Booking</title>
+  <title>Cinema Ticketing System - Browse Movies</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <h1>Booking</h1>
-    <p>Movie listing and booking form will be added here.</p>
-    <a href="confirmation.html">Confirmation</a>
+
+<div class="app-shell">
+
+  <aside class="nav-rail">
+    <span class="brand">CT</span>
+    <nav>
+      <a href="#top" class="active">Browse</a>
+      <a href="#now-showing">Movies</a>
+      <a href="#booking-form">Book</a>
+    </nav>
+    <a href="index.html">Logout</a>
+  </aside>
+
+  <main class="main-content">
+
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <span class="hero-tag">Featured</span>
+        <h1>Superman</h1>
+        <p>Featured movie of the week.</p>
+        <a href="#booking-form" class="btn btn-primary">Book Tickets</a>
+      </div>
+    </section>
+
+    <section class="section" id="now-showing">
+      <h2>Now Showing</h2>
+      <p>Movies will be added here.</p>
+    </section>
+
+    <section class="section" id="booking-form">
+      <h2>Book Your Tickets</h2>
+      <p>The booking form will be added here.</p>
+    </section>
+
   </main>
+
+</div>
+
 </body>
 </html>
