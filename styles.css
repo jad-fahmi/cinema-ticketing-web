@@ -96,6 +96,34 @@ a {
   padding: 32px 40px;
 }
 
+/* Movie listing */
+
+.movie-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.movie-card {
+  width: 160px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.movie-card img {
+  width: 160px;
+  height: 220px;
+  object-fit: cover;
+  border: 1px solid #34343a;
+}
+
+.movie-card span {
+  color: #a0a0a0;
+  font-size: 12px;
+}
+
 /* =========================================================
    CONFIRMATION PAGE
    confirmation.html
