@@ -240,10 +240,21 @@
           <input type="number" id="tickets" name="tickets" min="1" max="10" value="1" required>
         </div>
 
+        <div class="form-row">
+          <label for="seat-area">Seat Area</label>
+          <select id="seat-area" name="seatArea" required>
+            <option value="" disabled selected>Select a seat area</option>
+            <option>Front</option>
+            <option>Middle</option>
+            <option>Back</option>
+          </select>
+        </div>
+
         <fieldset>
           <legend>Ticket Type</legend>
           <label><input type="radio" name="ticketType" value="Adult" checked> Adult</label>
           <label><input type="radio" name="ticketType" value="Student"> Student</label>
+          <label><input type="radio" name="ticketType" value="Child"> Child</label>
         </fieldset>
 
         <fieldset>
@@ -251,6 +262,13 @@
           <label><input type="checkbox" name="snacks" value="Popcorn"> Popcorn</label>
           <label><input type="checkbox" name="snacks" value="Nachos"> Nachos</label>
           <label><input type="checkbox" name="snacks" value="Drink"> Drink</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment Method</legend>
+          <label><input type="radio" name="paymentMethod" value="Cash" checked> Cash</label>
+          <label><input type="radio" name="paymentMethod" value="Card"> Card</label>
+          <label><input type="radio" name="paymentMethod" value="Online Banking"> Online Banking</label>
         </fieldset>
 
         <div class="form-row">
