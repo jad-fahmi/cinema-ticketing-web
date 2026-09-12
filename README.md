@@ -1,5 +1,7 @@
 # Cinema Ticketing System
 
+![Cinema Ticketing System preview](preview.jpeg)
+
 A simple cinema ticketing website developed as a group project for **SPG 0473 Web Programming** at German-Malaysian Institute.
 
 The project focuses on basic web development using HTML and CSS, including form validation, different HTML input types, page navigation, and a cinema ticket booking interface.
