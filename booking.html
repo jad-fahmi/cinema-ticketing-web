@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cinema Ticketing System - Browse Movies</title>
+  <title>Cinema Ticketing System - Book Tickets</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,19 +12,24 @@
 
   <aside class="nav-rail">
     <span class="brand">CT</span>
+
     <nav>
       <a href="#top" class="active">Browse</a>
       <a href="#now-showing">Movies</a>
       <a href="#booking-form">Book</a>
     </nav>
+
     <a href="index.html">Logout</a>
   </aside>
+
 
   <main class="main-content">
 
     <section class="hero" id="top">
       <div class="hero-content">
+
         <span class="hero-tag">Featured This Week</span>
+
         <h1 class="hero-title">Superman</h1>
 
         <div class="hero-meta">
@@ -43,8 +48,32 @@
           <a href="#booking-form" class="btn btn-primary">Book Tickets</a>
           <a href="#now-showing" class="btn btn-secondary">Browse Movies</a>
         </div>
+
       </div>
     </section>
+
+
+    <section class="section">
+      <h2>How Booking Works</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <strong>1. Choose a movie</strong>
+          <p>Select from the movies currently showing.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>2. Pick your session</strong>
+          <p>Choose your date, showtime and ticket type.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>3. Confirm your booking</strong>
+          <p>Submit the form and continue to the confirmation page.</p>
+        </div>
+      </div>
+    </section>
+
 
     <section class="section" id="now-showing">
       <h2>Now Showing</h2>
@@ -55,39 +84,76 @@
           <img src="images/batman.jpg" alt="Batman poster">
           <strong>Batman</strong>
           <span>Action</span>
+          <a href="#booking-form" class="btn btn-secondary">Book</a>
         </article>
 
         <article class="movie-card">
           <img src="images/fight-club.jpg" alt="Fight Club poster">
           <strong>Fight Club</strong>
           <span>Drama</span>
+          <a href="#booking-form" class="btn btn-secondary">Book</a>
         </article>
 
         <article class="movie-card">
           <img src="images/good-will-hunting.jpg" alt="Good Will Hunting poster">
           <strong>Good Will Hunting</strong>
           <span>Drama</span>
+          <a href="#booking-form" class="btn btn-secondary">Book</a>
         </article>
 
         <article class="movie-card">
           <img src="images/superman.jpg" alt="Superman poster">
           <strong>Superman</strong>
           <span>Action</span>
+          <a href="#booking-form" class="btn btn-primary">Book</a>
         </article>
 
         <article class="movie-card">
           <img src="images/tfatf.jpg" alt="The Fast and the Furious poster">
           <strong>The Fast and the Furious</strong>
           <span>Action</span>
+          <a href="#booking-form" class="btn btn-secondary">Book</a>
         </article>
 
       </div>
     </section>
 
+
+    <section class="section">
+      <h2>Ticket Information</h2>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <strong>Adult</strong>
+          <p>Standard cinema admission.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>Student - 10% Discount</strong>
+          <p>Valid student identification may be required.</p>
+        </div>
+
+        <div class="info-card">
+          <strong>Up to 10 Tickets</strong>
+          <p>Maximum quantity for one booking.</p>
+        </div>
+      </div>
+
+      <details class="booking-notes">
+        <summary>Booking notes</summary>
+        <p>
+          Movie schedules may vary by date. Check your selected movie,
+          date and showtime before submitting.
+        </p>
+      </details>
+    </section>
+
+
     <section class="section" id="booking-form">
       <h2>Book Your Tickets</h2>
 
       <div class="booking-form-wrap">
+
         <form action="confirmation.html" method="get">
 
           <div class="form-grid">
@@ -99,7 +165,9 @@
                 id="cust-name"
                 name="custName"
                 placeholder="Full name"
-                required>
+                required
+                minlength="2"
+                maxlength="60">
             </div>
 
             <div class="field">
@@ -118,7 +186,9 @@
                 type="tel"
                 id="cust-phone"
                 name="custPhone"
-                placeholder="0123456789"
+                placeholder="e.g. 0123456789"
+                pattern="[0-9\-\+\s]{7,15}"
+                title="Enter a valid phone number"
                 required>
             </div>
 
@@ -126,11 +196,11 @@
               <label for="movie">Movie</label>
               <select id="movie" name="movie" required>
                 <option value="" disabled selected>Select a movie</option>
-                <option>Batman</option>
-                <option>Fight Club</option>
-                <option>Good Will Hunting</option>
-                <option>Superman</option>
-                <option>The Fast and the Furious</option>
+                <option value="Batman">Batman</option>
+                <option value="Fight Club">Fight Club</option>
+                <option value="Good Will Hunting">Good Will Hunting</option>
+                <option value="Superman">Superman</option>
+                <option value="The Fast and the Furious">The Fast and the Furious</option>
               </select>
             </div>
 
@@ -143,10 +213,10 @@
               <label for="showtime">Showtime</label>
               <select id="showtime" name="showtime" required>
                 <option value="" disabled selected>Select a showtime</option>
-                <option>12:30 PM</option>
-                <option>3:45 PM</option>
-                <option>7:00 PM</option>
-                <option>9:45 PM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="3:45 PM">3:45 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+                <option value="9:45 PM">9:45 PM</option>
               </select>
             </div>
 
@@ -162,27 +232,39 @@
                 required>
             </div>
 
+            <div class="field">
+              <label for="seat-area">Preferred Seating Area</label>
+              <select id="seat-area" name="seatArea">
+                <option value="Any">Any available seat</option>
+                <option value="Front">Front</option>
+                <option value="Middle">Middle</option>
+                <option value="Back">Back</option>
+              </select>
+            </div>
+
             <div class="field field-full">
               <fieldset>
                 <legend>Ticket Type</legend>
 
                 <div class="option-group">
-                  <label>
+                  <div class="radio-row">
                     <input
                       type="radio"
+                      id="ticket-adult"
                       name="ticketType"
                       value="Adult"
                       checked>
-                    Adult
-                  </label>
+                    <label for="ticket-adult">Adult</label>
+                  </div>
 
-                  <label>
+                  <div class="radio-row">
                     <input
                       type="radio"
+                      id="ticket-student"
                       name="ticketType"
                       value="Student">
-                    Student - 10% Discount
-                  </label>
+                    <label for="ticket-student">Student - 10% Discount</label>
+                  </div>
                 </div>
               </fieldset>
             </div>
@@ -192,20 +274,32 @@
                 <legend>Food &amp; Snacks</legend>
 
                 <div class="option-group">
-                  <label>
-                    <input type="checkbox" name="snacks" value="Popcorn">
-                    Popcorn
-                  </label>
+                  <div class="checkbox-row">
+                    <input
+                      type="checkbox"
+                      id="snack-popcorn"
+                      name="snacks"
+                      value="Popcorn">
+                    <label for="snack-popcorn">Popcorn</label>
+                  </div>
 
-                  <label>
-                    <input type="checkbox" name="snacks" value="Fries">
-                    Fries
-                  </label>
+                  <div class="checkbox-row">
+                    <input
+                      type="checkbox"
+                      id="snack-fries"
+                      name="snacks"
+                      value="Fries">
+                    <label for="snack-fries">Fries</label>
+                  </div>
 
-                  <label>
-                    <input type="checkbox" name="snacks" value="Nachos">
-                    Nachos
-                  </label>
+                  <div class="checkbox-row">
+                    <input
+                      type="checkbox"
+                      id="snack-nachos"
+                      name="snacks"
+                      value="Nachos">
+                    <label for="snack-nachos">Nachos</label>
+                  </div>
                 </div>
               </fieldset>
             </div>
@@ -213,10 +307,18 @@
             <div class="field">
               <label for="beverage">Beverage</label>
               <select id="beverage" name="beverage">
-                <option value="None">None</option>
+                <option value="None" selected>None</option>
                 <option value="Coca-Cola">Coca-Cola</option>
                 <option value="Sprite">Sprite</option>
                 <option value="Mineral Water">Mineral Water</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="contact-method">Preferred Contact</label>
+              <select id="contact-method" name="contactMethod">
+                <option value="Email">Email</option>
+                <option value="Phone">Phone</option>
               </select>
             </div>
 
@@ -226,7 +328,20 @@
                 id="request"
                 name="specialRequest"
                 maxlength="200"
-                placeholder="Any special seating or accessibility requests?"></textarea>
+                placeholder="Any special seating or accessibility requests? (optional)"></textarea>
+            </div>
+
+            <div class="field field-full">
+              <div class="checkbox-row">
+                <input
+                  type="checkbox"
+                  id="confirm-details"
+                  name="confirmDetails"
+                  required>
+                <label for="confirm-details">
+                  I have checked my booking details.
+                </label>
+              </div>
             </div>
 
           </div>
@@ -239,10 +354,12 @@
           </div>
 
         </form>
+
       </div>
     </section>
 
   </main>
+
 </div>
 
 </body>
