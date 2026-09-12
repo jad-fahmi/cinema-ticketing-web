@@ -186,6 +186,16 @@ button:hover {
   margin-bottom: 8px;
 }
 
+.rules-list {
+  max-width: 750px;
+  padding-left: 22px;
+  color: #dddddd;
+}
+
+.rules-list li {
+  margin-bottom: 8px;
+}
+
 .booking-form {
   max-width: 850px;
   padding: 24px;
