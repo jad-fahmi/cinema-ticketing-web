@@ -3,9 +3,29 @@
    Shared stylesheet
    ========================================================= */
 
+:root {
+  --bg: #0B0B0F;
+  --surface: #18181C;
+  --elevated: #242429;
+  --border: #34343A;
+  --red: #E50914;
+  --red-dark: #B00710;
+  --text: #F5F5F5;
+  --muted: #A0A0A0;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+
+  --radius: 4px;
+  --control-height: 40px;
+}
+
 /* =========================================================
    GLOBAL / SHARED
-   Used by all pages
    ========================================================= */
 
 * {
@@ -19,15 +39,20 @@ body {
 }
 
 body {
-  margin: 0;
+  background: var(--bg);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  background: #0b0b0f;
-  color: #f5f5f5;
+  line-height: 1.5;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* =========================================================
@@ -49,58 +74,84 @@ a {
 
 .nav-rail {
   width: 88px;
-  padding: 24px 8px;
-  background: #18181c;
-  border-right: 1px solid #34343a;
+  flex-shrink: 0;
+  padding: var(--space-3) 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: var(--space-4);
 }
 
 .nav-rail nav {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-3);
 }
 
 .nav-rail a {
-  color: #a0a0a0;
+  color: var(--muted);
   font-size: 12px;
+}
+
+.nav-rail a:hover,
+.nav-rail a.active {
+  color: var(--text);
 }
 
 .main-content {
   flex: 1;
+  min-width: 0;
 }
 
 .hero {
-  min-height: 360px;
-  padding: 48px 40px;
+  min-height: 420px;
+  padding: var(--space-6) var(--space-5) var(--space-5);
   display: flex;
   align-items: flex-end;
-  background: #15151a;
-  border-bottom: 1px solid #34343a;
+  background:
+    linear-gradient(90deg, rgba(11, 11, 15, 0.95), rgba(11, 11, 15, 0.25)),
+    url("images/superman-banner.jpg") center / cover no-repeat;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-content {
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .hero-tag {
-  color: #e50914;
-  font-size: 12px;
+  color: var(--red);
+  font-size: 11px;
   font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: var(--space-2) 0;
+  font-size: 40px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: var(--space-2);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hero-desc {
+  max-width: 480px;
+  color: var(--muted);
 }
 
 .section {
-  padding: 32px 40px;
+  padding: var(--space-4) var(--space-5);
 }
-
-/* Movie listing */
 
 .movie-row {
   display: flex;
-  gap: 16px;
+  gap: var(--space-2);
   overflow-x: auto;
 }
 
@@ -109,68 +160,33 @@ a {
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-1);
 }
 
 .movie-card img {
   width: 160px;
   height: 220px;
   object-fit: cover;
-  border: 1px solid #34343a;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .movie-card span {
-  color: #a0a0a0;
+  color: var(--muted);
   font-size: 12px;
 }
 
-/* Booking form */
-
 .booking-form-wrap {
-  padding: 24px;
-  background: #18181c;
-  border: 1px solid #34343a;
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.field label {
-  color: #a0a0a0;
-  font-size: 13px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="number"],
-select {
-  height: 40px;
-  padding: 0 12px;
-  color: #f5f5f5;
-  background: #242429;
-  border: 1px solid #34343a;
-}
-
-/* Extra booking options */
-
-textarea {
-  min-height: 88px;
-  padding: 10px 12px;
-  color: #f5f5f5;
-  background: #242429;
-  border: 1px solid #34343a;
-  resize: vertical;
+  gap: var(--space-3);
 }
 
 .form-grid .field-full {
@@ -178,32 +194,21 @@ textarea {
 }
 
 fieldset {
-  border: 1px solid #34343a;
-  padding: 16px;
+  margin: 0;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 legend {
-  color: #a0a0a0;
+  color: var(--muted);
   font-size: 12px;
 }
 
 .option-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-}
-
-.btn-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.btn-secondary {
-  color: #f5f5f5;
-  background: #242429;
-  border: 1px solid #34343a;
+  gap: var(--space-2);
 }
 
 /* =========================================================
@@ -218,24 +223,76 @@ legend {
    ========================================================= */
 
 .brand {
-  color: #e50914;
+  color: var(--red);
   font-weight: 700;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-2);
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  min-height: var(--control-height);
+  padding: 0 var(--space-2);
+  color: var(--text);
+  background: var(--elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+textarea {
+  min-height: 88px;
+  padding-top: var(--space-1);
+  resize: vertical;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 0 20px;
-  border: 0;
+  min-height: var(--control-height);
+  padding: 0 var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
   font-weight: 700;
   cursor: pointer;
 }
 
 .btn-primary {
-  background: #e50914;
-  color: #ffffff;
+  color: #fff;
+  background: var(--red);
+}
+
+.btn-primary:hover {
+  background: var(--red-dark);
+}
+
+.btn-secondary {
+  color: var(--text);
+  background: var(--elevated);
+  border-color: var(--border);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
 }
 
 /* =========================================================
