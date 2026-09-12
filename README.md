@@ -1,6 +1,6 @@
 # Cinema Ticketing System
 
-![Cinema Ticketing System preview](preview.jpeg)
+![Cinema Ticketing System preview](preview.png)
 
 A simple cinema ticketing website developed as a group project for **SPG 0473 Web Programming** at German-Malaysian Institute.
 
