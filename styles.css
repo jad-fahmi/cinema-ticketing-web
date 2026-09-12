@@ -158,6 +158,24 @@ button:hover {
   font-size: 14px;
 }
 
+.info-table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  background-color: #151515;
+}
+
+.info-table th,
+.info-table td {
+  padding: 12px;
+  border: 1px solid #444444;
+  text-align: left;
+}
+
+.info-table th {
+  background-color: #222222;
+}
+
 .booking-form {
   max-width: 850px;
   padding: 24px;
