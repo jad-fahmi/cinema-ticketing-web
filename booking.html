@@ -150,9 +150,79 @@
                 required>
             </div>
 
+            <div class="field field-full">
+              <fieldset>
+                <legend>Ticket Type</legend>
+
+                <div class="option-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="ticketType"
+                      value="Adult"
+                      checked>
+                    Adult
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      name="ticketType"
+                      value="Student">
+                    Student - 10% Discount
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="field field-full">
+              <fieldset>
+                <legend>Food &amp; Snacks</legend>
+
+                <div class="option-group">
+                  <label>
+                    <input type="checkbox" name="snacks" value="Popcorn">
+                    Popcorn
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="snacks" value="Fries">
+                    Fries
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="snacks" value="Nachos">
+                    Nachos
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="field">
+              <label for="beverage">Beverage</label>
+              <select id="beverage" name="beverage">
+                <option value="None">None</option>
+                <option value="Coca-Cola">Coca-Cola</option>
+                <option value="Sprite">Sprite</option>
+                <option value="Mineral Water">Mineral Water</option>
+              </select>
+            </div>
+
+            <div class="field field-full">
+              <label for="request">Special Request</label>
+              <textarea
+                id="request"
+                name="specialRequest"
+                maxlength="200"
+                placeholder="Any special seating or accessibility requests?"></textarea>
+            </div>
+
           </div>
 
-          <button type="submit" class="btn btn-primary">Book Tickets</button>
+          <div class="btn-row">
+            <button type="reset" class="btn btn-secondary">Reset</button>
+            <button type="submit" class="btn btn-primary">Book Tickets</button>
+          </div>
 
         </form>
       </div>
