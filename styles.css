@@ -176,6 +176,16 @@ button:hover {
   background-color: #222222;
 }
 
+.steps-list {
+  max-width: 650px;
+  padding-left: 22px;
+  color: #dddddd;
+}
+
+.steps-list li {
+  margin-bottom: 8px;
+}
+
 .booking-form {
   max-width: 850px;
   padding: 24px;
